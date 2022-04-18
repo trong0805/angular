@@ -1,0 +1,113 @@
+<section id="hero" class="d-flex justify-content-center align-items-center">
+  <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+    <h1>Learning Today,<br>Leading Tomorrow</h1>
+    <h2>If You Don’t Walk Today, You’ll Have To Run Tomorrow.</h2>
+    <a [routerLink]="'/mon-hoc'" class="btn-get-started">Get Started</a>
+  </div>
+</section>
+<!--  -->
+<!-- <input type="text" [(ngModel)]="keyword" (keyup)="search()">
+<br>
+<ul>
+    <li *ngFor="let s of listStudents">{{s.email}}</li>
+</ul> -->
+
+<!--  -->
+<section id="about" class="about">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row">
+      <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+        <img src="https://thptchuyensonla.edu.vn/wp-content/uploads/2020/06/nganh-it-o-viet-nam-wallpaper.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+        <p class="fst-italic">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+        </p>
+        <ul>
+          <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+          <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+          <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.
+          </li>
+        </ul>
+        <p>
+          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="popular-courses" class="courses">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title ok alert">
+      <h1 class="text-center text-white">Courses</h1>
+    </div>
+
+    <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+      <div *ngFor="let s of listSub" class="col-lg-4 col-md-6 d-flex align-items-stretch" >
+        <div class="course-item w-100">
+          <div class="w-100 text-center">
+            <a [routerLink]="'/quiz/' + s.Code">
+              <img [src]="'/assets/logos/' + s.Logo" class="img-fluid" alt="...">
+            </a>
+          </div>
+          <div class="course-content">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4>MÃ MÔN: {{s.Code}}</h4>
+            </div>
+
+            <h3><a [routerLink]="'/quiz/' + s.Code">{{s.Name}}</a></h3>
+          </div>
+        </div>
+      </div> <!-- End Course Item-->
+
+    </div>
+
+  </div>
+</section>
+
+<section id="events" class="events">
+  <div class="container" data-aos="fade-up">
+    <h1 class="text-center p-3 ok alert text-white">Events</h1>
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-stretch">
+        <div class="card">
+          <div class="card-img">
+            <img src="https://dbk.vn/uploads/ckfinder/images/1-content/anh-dep-1.jpg" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><a href="">Introduction to webdesign</a></h5>
+            <p class="fst-italic text-center">Sunday, September 26th at 7:00 pm</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex align-items-stretch">
+        <div class="card">
+          <div class="card-img">
+            <img src="https://dbk.vn/uploads/ckfinder/images/1-content/anh-dep-1.jpg" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><a href="">Marketing Strategies</a></h5>
+            <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p>
+            <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium,
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+

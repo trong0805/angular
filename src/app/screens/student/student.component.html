@@ -1,0 +1,64 @@
+<section id="dashboard">
+  <div class="row mb-4">
+    <div class="text-white rounded fs-4 p-3 text-center fw-bold" style="background: #5FCF80;">DASHBOARD</div>
+  </div>
+  <h3>Sinh viên</h3>
+  <label for="" class="form-lable fs-4">Search: </label><input type="text" placeholder="Điền email cần tìm"
+    [(ngModel)]="keyword" (keyup)="search()">
+  <button class="btn btn-success float-end" [routerLink]="'/admin/sinh-vien/add'">Thêm mới</button>
+  <br>
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+      <th>#</th>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Action</th>
+    </thead>
+    <tbody *ngFor="let s of listStudents |  paginate: { itemsPerPage: 4, currentPage: page, totalItems: totalLength }">
+      <tr>
+        <td>{{s.id}}</td>
+        <td>{{s.name}} {{s.fullname}}</td>
+        <td>
+          <img *ngIf="s.avatar != null" src="{{s.avatar}}" width="80px" alt="">
+          <img *ngIf="s.avatar == null"
+            src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" width="80px" alt="">
+        </td>
+        <td>{{s.email}}</td>
+        <td>
+          <button *ngIf="s.googleId == null" class="btn btn-primary me-2"
+            [routerLink]="'/admin/sinh-vien/edit/' + s.id">Sửa</button>
+          <button class="btn btn-danger" (click)="confirm(s.id)">Xóa</button>
+        </td>
+        <td>
+          <details>
+            <summary>
+              <div class="btn text-white" style="background-color: #16a34a;">
+                Xem điểm
+              </div>
+              <div class="details-modal-overlay"></div>
+            </summary>
+            <div class="details-modal">
+              <div class="details-modal-title">
+                <h1>Điểm của bạn</h1>
+              </div>
+              <div class="details-modal-content">
+                <table class="table table-hover">
+                  <thead>
+                    <th>Mã môn</th>
+                    <th>Điểm</th>
+                  </thead>
+                  <tbody *ngFor="let sc of s.marks ">
+                    <td>{{sc.subject}}</td>
+                    <td>{{sc.score}}</td>
+                  </tbody>
+
+                </table>
+              </div>
+            </div>
+          </details>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</section>

@@ -1,0 +1,37 @@
+.left {
+  width: 20%;
+  height: 1200px;
+  padding: 24px;
+  background-color: #5fcf80;
+  box-sizing: border-box;
+}
+.right {
+  margin-left: 23%;
+  margin-right: 0;
+  width: 76%;
+  min-height: 740px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.nav-item:hover {
+  background-color: #b3b3b3;
+  border-radius: 8px;
+}
+.bg-gr {
+  background-color: #5fcf80;
+}
+.top {
+  flex: 1;
+}
+.bottom {
+  background-color: #5fcf80;
+  padding: 24px;
+  box-sizing: border-box;
+  margin: -4px -10px;
+  border-radius: 8px 8px 0px 0px;
+}
+.cssne {
+  background-color: white;
+  border-radius: 8px;
+}

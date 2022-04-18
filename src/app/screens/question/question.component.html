@@ -1,0 +1,37 @@
+<section id="dashboard">
+  <div class="row mb-4">
+    <div class="text-white rounded fs-4 p-3 text-center fw-bold" style="background: #5FCF80;">DASHBOARD</div>
+  </div>
+  <h3>Câu hỏi</h3>  <button class="btn btn-success float-end" [routerLink]="'/admin/cau-hoi/'+ code+'/add'">Thêm mới</button>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <th>#</th>
+      <th>Text</th>
+      <th>Marks</th>
+      <!-- <th>AnswerId</th>
+      <th>Answer</th> -->
+      <th class="px-4">Action</th>
+    </thead>
+    <tbody *ngFor="let ok of listQuestion">
+      <tr>
+        <td>{{ok.id}}</td>
+        <details close>
+          <summary>
+            <td>{{ok.Text}}</td>
+          </summary>
+          <div >
+            <!-- <ol type="1"> -->
+              <p class="mx-3 idne" *ngFor="let ans of ok.Answers; let no = index">{{no+1}}.<span *ngIf="ok.AnswerId == ans.id" style="color:red;">{{ans.Text}}</span><span *ngIf="ok.AnswerId != ans.id" style="color:black;">{{ans.Text}}</span></p>
+            <!-- </ol> -->
+          </div>
+        </details>
+        <td style="width: 80px;">{{ok.Marks}} Điểm</td>
+        <td style="width: 180px;">
+          <button class="btn btn-primary mx-2" [routerLink]="'/admin/cau-hoi/'+ code+'/edit/' + ok.id">Sửa</button>
+          <button class="btn btn-danger" (click)="confirm(code,ok.id)">Xóa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>

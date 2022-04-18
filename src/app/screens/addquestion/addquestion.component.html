@@ -1,0 +1,37 @@
+<section id="dashboard">
+  <div class="row mb-4">
+    <div class="text-white rounded fs-4 p-3 text-center fw-bold" style="background: #5FCF80;">DASHBOARD</div>
+  </div>
+  <h3>Thêm câu hỏi</h3>
+  <div class="container-fluid">
+    <div class="col-6 offset-3 mt-5">
+        <form action="" [formGroup]="addForm" >
+            <div class="form-group mt-3" >
+                <label for="">Câu hỏi</label>
+                <input type="text" class="form-control" [(ngModel)]="questionData.Text" formControlName="Text">
+                <div style="width: 20%;" *ngIf="addForm.controls['Text'].errors && addForm.controls['Text'].touched || addForm.controls['Text'].dirty"> 
+                    <span class="text-danger" *ngIf="addForm.controls['Text'].hasError('required')">Hãy nhập câu hỏi</span>
+                </div>
+            </div>
+
+            <button  (click)="addAnswer()"  class="btn btn-primary float-end mt-3 mb-3">
+                Thêm đáp án
+            </button>
+            <div class="form-group mt-3" *ngFor="let na of newAnswer">
+                <div *ngFor="let asw of questionData.Answers;let i = index ">
+                <input type="text" class="form-control" [(ngModel)]="asw.Text"  formControlName="Text" >
+                <input type="radio" class="form-check-input me-2" [(ngModel)]="asw.id" value="true" formControlName="id" name="{{i+1}}">Đúng 
+                <button  (click)="removeAnswer(i)" class="btn btn-danger float-end mt-3">
+                    Xóa đáp án
+                </button>
+            </div>
+            </div>
+            
+
+            <div>
+                <button [disabled]="addForm.invalid" (click)="addQuestion()" class="btn btn-primary mt-5" >Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>
+</section>

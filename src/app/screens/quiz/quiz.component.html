@@ -1,0 +1,57 @@
+<div style="height: 100px;"></div>
+<div class="section-title ok alert text-white">
+  <h1 class="text-center">Quiz</h1>
+</div>
+<section id="quiz" class="quiz">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row">
+      <div class="col-lg-4 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+        <div class="row">
+          <div class="col-md-12 p-0 bshow">
+            <div class="img">
+              <img style="border-radius: 4px;" src="https://dbk.vn/uploads/ckfinder/images/1-content/anh-dep-1.jpg"
+                class="img-fluid" width="100%" alt="...">
+            </div>
+            <div class="content p-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="px-3 py-2 text-white bg-success">{{code}}</h5>
+                <h5>Time: 15Minutes</h5>
+              </div>
+              <ul>
+                <!-- <li class="nav-item">Thời gian mở: 20/03/2022</li>
+                <li class="nav-item">Thời gian đóng: 20/03/2022</li> -->
+                <li class="nav-item">Tổng số câu hỏi: 10</li>
+              </ul>
+            </div>
+            <div class="m-0 alert alert-dark">
+              <h4 class="fw-lighter">Lưu ý: Bài chỉ được làm 1 lần duy nhất!</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 pt-4 pt-lg-0 order-2 order-lg-1 content">
+        <form action="">
+          <div class="">
+            <!-- <ol type="1"> -->
+            <div class="" ></div>
+            <div class="bor-tb justify-content-between align-items-center mb-1 text-white"
+              *ngFor="let ok of listQuestion; let no = index">
+              <p class="d-block p-2 text-black px-3 m-0 bg-secondary bg-opacity-50 rounded-bottom">Câu {{no+1}}: {{ok.Text}}</p>
+              <ul class="hoverr text-black m-0 mt-1 mx-4">
+                <li class="ok1" *ngFor="let an of ok.Answers">
+                  <input (change)="selectAnswer(ok.id, an.id)" id="anw_{{an.id}}" type="radio" [name]="ok.id"
+                    [value]="an.id" class="mx-2">
+                  <label for="anw_{{an.id}}">{{an.Text}}</label>
+                </li>
+              </ul>
+            </div>
+            <!-- </ol> -->
+          </div>
+          <button (click)="submitExcercise()" class="btn btn-success mt-2">Nộp bài</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End About Section -->

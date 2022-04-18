@@ -1,0 +1,27 @@
+<section id="dashboard">
+  <div class="row mb-4">
+    <div class="text-white rounded fs-4 p-3 text-center fw-bold" style="background: #5FCF80;">DASHBOARD</div>
+  </div>
+  <h3>Sửa câu hỏi</h3>
+  <form action="" class="form-horizontal">
+    <div class="form-group">
+      <label for="" class="form-label">Text</label>
+      <input type="text" class="form-control" [value]="list.Text">
+    </div>
+    <div class="form-group">
+      <label for="" class="form-label">Marks</label>
+      <input type="text" class="form-control" [value]="list.Marks">
+    </div>
+    <!-- <div class="form-group">
+      <label for="" class="form-label">AnswerId</label>
+      <input type="text" class="form-control">
+    </div> -->
+    <div class="form-group" *ngFor="let ans of list.Answers;let num = index">
+      <label for="" class="form-label">Answer {{num+1}}</label>
+      <input type="text" class="form-control" [value]="ans.Text">
+    </div>
+
+    <br>
+    <button class="btn btn-success">Sửa</button>
+  </form>
+</section>

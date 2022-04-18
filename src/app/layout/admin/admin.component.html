@@ -1,0 +1,31 @@
+<main style="background-color: #F0F2F5;">
+  <div class="left fixed-top text-white">
+    <div class="alert alert-light fs-4 fw-bold text-center">{{name}}</div>
+    <ul class="nav flex-column cssne">
+      <li class="nav-item">
+        <a class="nav-link text-black" href="/admin"> <div style="display: inline-block; width: 36px;"><i class="fas fa-table mx-2"></i></div> <div style="display: inline-block;">Dashboard</div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-black" href="/admin/mon-hoc"> <div style="display: inline-block; width: 36px;"><i class="fas fa-book mx-2"></i></div><div style="display: inline-block;">Subjects</div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-black" href="/admin/sinh-vien"> <div style="display: inline-block; width: 36px;"><i class="fas fa-users mx-2"></i></div> <div style="display: inline-block;">Students</div></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-black" (click)="logout()" href="javascript:;" > <div style="display: inline-block; width: 36px;"><i class="fas fas fa-door-open mx-2"></i></div> <div style="display: inline-block;">Đăng xuất</div></a>
+      </li>
+
+    </ul>
+  </div>
+  <div class="right">
+    <div class="top">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="bottom">
+      <footer>
+        <p class="text-center m-0 text-white">@Copyright Trọng 2022</p>
+      </footer>
+    </div>
+  </div>
+
+</main>

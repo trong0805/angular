@@ -1,0 +1,34 @@
+<section id="dashboard">
+  <div class="row mb-4">
+    <div class="text-white rounded fs-4 p-3 text-center fw-bold" style="background: #5FCF80;">DASHBOARD</div>
+  </div>
+  <h3>Thêm môn học</h3>
+  <form [formGroup]="subForm" action="" class="form-horizontal" (ngSubmit)="onSubmit(subForm.value)">
+    <div class="form-group">
+      <label for="" class="form-label">Code</label>
+      <input type="text" class="form-control" formControlName="Code">
+      <app-show-error
+        [formField]="subForm.get('Code')"
+        key="Code"
+      ></app-show-error>
+    </div>
+    <div class="form-group">
+      <label for="" class="form-label">Name</label>
+      <input type="text" class="form-control" formControlName="Name">
+      <app-show-error
+        [formField]="subForm.get('Name')"
+        key="Tên"
+      ></app-show-error>
+    </div>
+    <div class="form-group">
+      <label for="" class="form-label">Image</label>
+      <input type="file" class="form-control" formControlName="Logo">
+      <app-show-error
+        [formField]="subForm.get('Logo')"
+        key="Ảnh"
+      ></app-show-error>
+    </div>
+    <br>
+    <button class="btn btn-success" [disabled]="subForm.invalid">Thêm mới</button>
+  </form>
+</section>
